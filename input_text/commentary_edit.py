@@ -1,4 +1,5 @@
 import json
+from commentary_sanitize_text import sanitize_text
 import os
 
 def load_commentary(json_path="finley_memory.json"):
@@ -24,7 +25,8 @@ def edit_commentary(entries):
 
         if choice == "y":
             new_text = input("Enter your revised commentary:\n").strip()
-            entry['text'] = new_text
+            sanitized_text = sanitize_text(new_text)
+            entry['text'] = sanitized_text 
 
         updated_entries.append(entry)
     return updated_entries

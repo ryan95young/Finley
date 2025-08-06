@@ -1,8 +1,9 @@
 import json
 from datetime import datetime
+from commentary_sanitize_text import sanitize_text
 import os
 
-def save_commentary(text, json_path="finley_memory.json"):
+def save_commentary(json_path="finley_memory.json"):
     # Load existing data if the file exists
     if os.path.exists(json_path):
         with open(json_path, "r") as f:
@@ -10,9 +11,22 @@ def save_commentary(text, json_path="finley_memory.json"):
     else:
         data = []
 
+    # Get user input
+    text = input("Enter your commentary:\n").strip()
+
+     # Sanitize the commentary text
+    text = sanitize_text(text)
+    
+    # Get tags as comma-separated string, then split into list
+    tags_input = input("Enter tags (comma-separated, optional): ").strip()
+    tags = [tag.strip() for tag in tags_input.split(",")] if tags_input else []
+
+    # Optionally, add other metadata here (e.g., month, category)
+
     new_entry = {
         "id": len(data) + 1,
-        "text": text.strip(),
+        "text": text,
+        "tags": tags,
         "timestamp": datetime.now().isoformat()
     }
 
@@ -22,8 +36,7 @@ def save_commentary(text, json_path="finley_memory.json"):
     with open(json_path, "w") as f:
         json.dump(data, f, indent=2)
 
-    print("Commentary saved.")
-    
+    print("✅ Commentary with tags saved.")
+
 if __name__ == "__main__":
-    user_text = input("Enter your commentary: ")
-    save_commentary(user_text)
+    save_commentary()
