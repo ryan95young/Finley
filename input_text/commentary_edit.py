@@ -1,5 +1,6 @@
 import json
 from commentary_sanitize_text import sanitize_text
+from commentary_detect_conflicts_and_duplicates import detect_conflicts_and_duplicates
 import os
 
 def load_commentary(json_path="finley_memory.json"):
@@ -26,7 +27,20 @@ def edit_commentary(entries):
         if choice == "y":
             new_text = input("Enter your revised commentary:\n").strip()
             sanitized_text = sanitize_text(new_text)
-            entry['text'] = sanitized_text 
+            
+            # Create a tentative new entry to check for conflicts/duplicates
+            new_entry = entry.copy()
+            new_entry['text'] = sanitized_text
+            
+            # Run conflict/duplicate detection
+            proceed = detect_conflicts_and_duplicates(new_entry, entries)
+            if not proceed:
+                print("Edit discarded due to conflicts/duplicates.")
+                updated_entries.append(entry)  # Keep original unchanged
+                continue  # Skip saving edited version
+            
+            # If no conflict or user confirms, update the entry
+            entry['text'] = sanitized_text
 
         updated_entries.append(entry)
     return updated_entries

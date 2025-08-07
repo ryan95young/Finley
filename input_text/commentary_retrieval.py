@@ -21,9 +21,11 @@ def display_commentary(data):
         return
 
     print("\n--- Finley Commentary Log ---\n")
-    for entry in data:
-        print(f"[{entry['id']}] {entry['timestamp']}")
-        print(f"> {entry['text']}\n")
+    for i, entry in enumerate(data, start=1):
+        # Use the loop index i as an ID display instead of entry['id']
+        print(f"[{i}] {entry.get('timestamp', 'No timestamp')}")
+        # Use 'commentary' or fallback if missing
+        print(f"> {entry.get('commentary', 'No commentary')}\n")
 
 if __name__ == "__main__":
     commentary = load_commentary()

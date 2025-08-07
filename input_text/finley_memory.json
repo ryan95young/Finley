@@ -1,0 +1,220 @@
+[
+  {
+    "id": 1,
+    "text": "underperformance",
+    "timestamp": "2025-08-04T19:08:23.176450"
+  },
+  {
+    "id": 2,
+    "text": "underperformance",
+    "timestamp": "2025-08-05T21:33:15.263059"
+  },
+  {
+    "id": 3,
+    "text": "underperformance",
+    "timestamp": "2025-08-05T21:34:47.667433"
+  },
+  {
+    "id": 4,
+    "text": "underperformance",
+    "tags": [
+      "Fire",
+      "Water",
+      "Weather"
+    ],
+    "timestamp": "2025-08-05T22:14:55.176346"
+  },
+  {
+    "id": 5,
+    "text": "underperformance",
+    "tags": [
+      "funny"
+    ],
+    "timestamp": "2025-08-05T22:15:14.346004"
+  },
+  {
+    "id": 6,
+    "text": "underperformance",
+    "tags": [
+      "funny"
+    ],
+    "timestamp": "2025-08-05T22:26:31.742008"
+  },
+  {
+    "id": 7,
+    "text": "underperformance",
+    "tags": [],
+    "timestamp": "2025-08-05T22:46:29.716152"
+  },
+  {
+    "month": "2025-07",
+    "business_unit": "OB Services",
+    "metric": "Revenue",
+    "commentary": "Collections dropped due to a legal dispute.",
+    "sanitized": true,
+    "uploaded_by": "John.Smith",
+    "timestamp": "2025-08-06T20:03:43"
+  },
+  {
+    "month": "2025-07",
+    "business_unit": "GYN Services",
+    "metric": "Volume",
+    "commentary": "lacking full adherence billing practices affected patient volume.",
+    "sanitized": true,
+    "uploaded_by": "Jane.Doe",
+    "timestamp": "2025-08-06T20:03:43"
+  },
+  {
+    "month": "2025-07",
+    "business_unit": "Admin",
+    "metric": "Staffing",
+    "commentary": "We let go two underperforming managers.",
+    "sanitized": true,
+    "uploaded_by": "Amy.Wong",
+    "timestamp": "2025-08-06T20:03:43"
+  },
+  {
+    "month": "2025-06",
+    "business_unit": "OB Services",
+    "metric": "Revenue",
+    "commentary": "Revenue impacted by a market dominance in the market.",
+    "sanitized": true,
+    "uploaded_by": "John.Smith",
+    "timestamp": "2025-08-06T20:03:43"
+  },
+  {
+    "month": "2025-06",
+    "business_unit": "GYN Services",
+    "metric": "Volume",
+    "commentary": "No major change vs prior month.",
+    "sanitized": false,
+    "uploaded_by": "Jane.Doe",
+    "timestamp": "2025-08-06T20:03:43"
+  },
+  {
+    "month": "2025-07",
+    "business_unit": "OB Services",
+    "metric": "Revenue",
+    "commentary": "Collections dropped due to a legal dispute.",
+    "sanitized": true,
+    "uploaded_by": "John.Smith",
+    "timestamp": "2025-08-06T20:04:54"
+  },
+  {
+    "month": "2025-07",
+    "business_unit": "GYN Services",
+    "metric": "Volume",
+    "commentary": "lacking full adherence billing practices affected patient volume.",
+    "sanitized": true,
+    "uploaded_by": "Jane.Doe",
+    "timestamp": "2025-08-06T20:04:54"
+  },
+  {
+    "month": "2025-07",
+    "business_unit": "Admin",
+    "metric": "Staffing",
+    "commentary": "We let go two underperforming managers.",
+    "sanitized": true,
+    "uploaded_by": "Amy.Wong",
+    "timestamp": "2025-08-06T20:04:54"
+  },
+  {
+    "month": "2025-06",
+    "business_unit": "OB Services",
+    "metric": "Revenue",
+    "commentary": "Revenue impacted by a market dominance in the market.",
+    "sanitized": true,
+    "uploaded_by": "John.Smith",
+    "timestamp": "2025-08-06T20:04:54"
+  },
+  {
+    "month": "2025-06",
+    "business_unit": "GYN Services",
+    "metric": "Volume",
+    "commentary": "No major change vs prior month.",
+    "sanitized": false,
+    "uploaded_by": "Jane.Doe",
+    "timestamp": "2025-08-06T20:04:54"
+  },
+  {
+    "month": "2025-07",
+    "business_unit": "West Region",
+    "metric": "Revenue",
+    "commentary": "This is a market dominance legal dispute",
+    "sanitized": true,
+    "uploaded_by": "ryan",
+    "timestamp": "2025-08-06T20:05:16"
+  },
+  {
+    "month": "2025-07",
+    "business_unit": "East Region",
+    "metric": "Cost",
+    "commentary": "lacking full adherence coordinated pricing activity",
+    "sanitized": true,
+    "uploaded_by": "jane",
+    "timestamp": "2025-08-06T20:05:16"
+  },
+  {
+    "month": "2025-08",
+    "business_unit": "North Region",
+    "metric": "Margin",
+    "commentary": "Normal operations with high efficiency",
+    "sanitized": false,
+    "uploaded_by": "ryan",
+    "timestamp": "2025-08-06T20:05:16"
+  },
+  {
+    "month": "2025-07",
+    "business_unit": "West Region",
+    "metric": "Revenue",
+    "commentary": "This is a market dominance legal dispute",
+    "sanitized": true,
+    "uploaded_by": "ryan",
+    "timestamp": "2025-08-06T20:08:25"
+  },
+  {
+    "month": "2025-07",
+    "business_unit": "East Region",
+    "metric": "Cost",
+    "commentary": "lacking full adherence coordinated pricing activity",
+    "sanitized": true,
+    "uploaded_by": "jane",
+    "timestamp": "2025-08-06T20:08:25"
+  },
+  {
+    "month": "2025-08",
+    "business_unit": "North Region",
+    "metric": "Margin",
+    "commentary": "Normal operations with high efficiency",
+    "sanitized": false,
+    "uploaded_by": "ryan",
+    "timestamp": "2025-08-06T20:08:25"
+  },
+  {
+    "month": "2025-07",
+    "business_unit": "East",
+    "metric": "Revenue",
+    "commentary": "Revenue was impacted due to legal dispute with provider group",
+    "sanitized": true,
+    "uploaded_by": "Ryan",
+    "timestamp": "2025-08-06T20:13:05"
+  },
+  {
+    "month": "2025-07",
+    "business_unit": "West",
+    "metric": "Volume",
+    "commentary": "Patient volume decreased after negative PR",
+    "sanitized": false,
+    "uploaded_by": "Christine",
+    "timestamp": "2025-08-06T20:13:05"
+  },
+  {
+    "month": "2025-07",
+    "business_unit": "North",
+    "metric": "Cost",
+    "commentary": "Costs increased because of market dominance pricing by a vendor",
+    "sanitized": true,
+    "uploaded_by": "Alex",
+    "timestamp": "2025-08-06T20:13:05"
+  }
+]

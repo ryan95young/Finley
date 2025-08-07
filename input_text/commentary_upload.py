@@ -1,6 +1,7 @@
 import json
 from datetime import datetime
 from commentary_sanitize_text import sanitize_text
+from commentary_detect_conflicts_and_duplicates import detect_conflicts_and_duplicates
 import os
 
 def save_commentary(json_path="finley_memory.json"):
@@ -29,6 +30,11 @@ def save_commentary(json_path="finley_memory.json"):
         "tags": tags,
         "timestamp": datetime.now().isoformat()
     }
+
+    # Detect duplicates and conflicts
+    proceed = detect_conflicts_and_duplicates(new_entry, data)
+    if not proceed:
+        return  # abort saving if user says no
 
     data.append(new_entry)
 
