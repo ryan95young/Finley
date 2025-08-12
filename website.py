@@ -2,11 +2,14 @@ import streamlit as st
 import sys
 import os
 
-# Add input_text folder to Python path
-sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'input_text')))
 
-from input_text.input_commentary import save_commentary
+print("Working dir:", os.getcwd())
+print("sys.path:", sys.path)
+
+# Add input_text folder to Python path
+sys.path.append(os.path.join(os.getcwd(), "input_text"))
+
+from input_commentary import save_commentary
 
 # --- PAGE SETUP ---
 st.set_page_config(
