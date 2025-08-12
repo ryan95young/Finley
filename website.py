@@ -21,8 +21,7 @@ if finley_path not in sys.path:
 
 # Import other python codes
 from input_text.commentary_sanitize_text import sanitize_text
-# import input_text.commentary_upload
-# from input_text.commentary_or_question import classify_submission
+from input_text.commentary_or_question import classify_submission
 
 # --- PAGE SETUP ---
 st.set_page_config(
@@ -160,6 +159,7 @@ st.markdown(
 comment = st.text_area("", placeholder="Give Finley commentary to remember, or ask it questions here...")
 
 comment = sanitize_text(comment)
+classify_submission(comment)
 
 if st.button("Submit"):
     if comment.strip():
