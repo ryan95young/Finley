@@ -22,6 +22,7 @@ if finley_path not in sys.path:
 # Import other python codes
 from input_text.commentary_sanitize_text import sanitize_text
 from input_text.commentary_or_question import classify_submission
+from input_text.commentary_or_question import submission_final_reply
 
 # --- PAGE SETUP ---
 st.set_page_config(
@@ -166,7 +167,7 @@ if st.button("Submit"):
         if "submissions" not in st.session_state:
             st.session_state.submissions = []
         st.session_state.submissions.append({"comment": comment})
-        st.success("I'll remember that for you")
+        st.success(submission_final_reply)
         
     else:
         st.error("Please enter a comment before submitting.")
