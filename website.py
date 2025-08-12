@@ -19,7 +19,7 @@ finley_path = os.path.abspath(os.path.dirname(__file__))
 if finley_path not in sys.path:
     sys.path.insert(0, finley_path)
 
-print("Cleaned sys.path:", sys.path)
+from commentary_sanitize import sanitize_text
 
 # --- PAGE SETUP ---
 st.set_page_config(
@@ -163,7 +163,8 @@ if st.button("Submit"):
         st.session_state.submissions.append({"comment": comment})
         st.success("I'll remember that for you")
         
-        save_commentary(comment)
+        #save_commentary(comment)
+        comment = sanitize_text(comment)
         
     else:
         st.error("Please enter a comment before submitting.")
