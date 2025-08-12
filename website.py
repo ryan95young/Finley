@@ -1,5 +1,5 @@
 import streamlit as st
-from commentary_upload
+import commentary_upload
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'input_text')))
 
