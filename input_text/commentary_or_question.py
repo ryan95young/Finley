@@ -1,5 +1,7 @@
 import re
-# from commentary_upload import save_commentary
+submission_final_reply = []
+submission_commentary_reply = "I'll remember that for you."
+submission_question_reply = "Thank you for the question. [Reply]"
 
 def classify_submission(text: str) -> str:
     """
@@ -12,9 +14,8 @@ def classify_submission(text: str) -> str:
     """
     
     if not text or not text.strip():
-        # save_commentary()
-        "Thank you for the commentary"  # default for empty submissions
-    
+       submission_final_reply = submission_commentary_reply 
+        
     # Normalize text for checks
     text_clean = text.strip().lower()
     
@@ -27,16 +28,15 @@ def classify_submission(text: str) -> str:
     
     # Rule 1: If there's a question mark anywhere → question
     if "?" in text_clean:
-        return "question"
+        submission_final_reply = submission_question_reply
     
     # Rule 2: If starts with question word → question
     if any(text_clean.startswith(qw + " ") for qw in question_words):
-        return "question"
+        submission_final_reply = submission_question_reply
     
     # Rule 3: If ends with a question mark after stripping punctuation → question
     if re.match(r".+\?$", text.strip()):
-        return "question"
+        submission_final_reply = submission_question_reply
     
     # Default: commentary
-    # save_commentary()
-    "Thank you for the commentary"  # default for empty submissions
+    submission_final_reply = submission_commentary_reply  # default for empty submissions
