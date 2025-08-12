@@ -1,6 +1,27 @@
 import streamlit as st
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'input_text')))
-import commentary_upload
+import sys
+import os
+
+# Remove duplicates and irrelevant entries from sys.path
+def clean_sys_path():
+    seen = set()
+    new_path = []
+    for p in sys.path:
+        if p not in seen and os.path.isdir(p):
+            seen.add(p)
+            new_path.append(p)
+    sys.path[:] = new_path
+
+clean_sys_path()
+
+# Ensure your project folder is on the path (absolute path to finley)
+finley_path = os.path.abspath(os.path.dirname(__file__))
+if finley_path not in sys.path:
+    sys.path.insert(0, finley_path)
+
+# Import other python codes
+from input_text.commentary_sanitize_text import sanitize_text
+from input_text.commentary_or_question import classify_submission
 
 # --- PAGE SETUP ---
 st.set_page_config(
@@ -137,14 +158,14 @@ st.markdown(
 # --- INPUT AREA ---
 comment = st.text_area("", placeholder="Give Finley commentary to remember, or ask it questions here...")
 
+comment = sanitize_text(comment)
+
 if st.button("Submit"):
     if comment.strip():
         if "submissions" not in st.session_state:
             st.session_state.submissions = []
         st.session_state.submissions.append({"comment": comment})
         st.success("I'll remember that for you")
-        
-        commentary_upload.save_commentary(comment)
         
     else:
         st.error("Please enter a comment before submitting.")
