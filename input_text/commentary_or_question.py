@@ -1,5 +1,5 @@
 import re
-from commentary_upload import save_commentary
+# from commentary_upload import save_commentary
 
 def classify_submission(text: str) -> str:
     """
@@ -12,7 +12,7 @@ def classify_submission(text: str) -> str:
     """
     
     if not text or not text.strip():
-        save_commentary()
+        # save_commentary()
         "Thank you for the commentary"  # default for empty submissions
     
     # Normalize text for checks
@@ -38,5 +38,5 @@ def classify_submission(text: str) -> str:
         return "question"
     
     # Default: commentary
-    save_commentary()
+    # save_commentary()
     "Thank you for the commentary"  # default for empty submissions
