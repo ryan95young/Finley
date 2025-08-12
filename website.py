@@ -1,4 +1,5 @@
 import streamlit as st
+from commentary_upload import save_commentary
 
 # --- PAGE SETUP ---
 st.set_page_config(
@@ -142,7 +143,7 @@ if st.button("Submit"):
         st.session_state.submissions.append({"comment": comment})
         st.success("I'll remember that for you")
         
-        xxx
+        save_commentary(comment)
         
     else:
         st.error("Please enter a comment before submitting.")
