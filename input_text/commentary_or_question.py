@@ -12,11 +12,6 @@ def classify_submission(text: str) -> str:
     - If it starts with question words like who/what/why/how/etc. → question
     - Otherwise → commentary
     """
-    
-    # Set up replies
-    submission_final_reply = []
-    submission_commentary_reply = "I'll remember that for you."
-    submission_question_reply = "Thank you for the question. [Reply]"
 
     if not text or not text.strip():
        submission_final_reply = submission_commentary_reply 
