@@ -159,6 +159,7 @@ st.markdown(
 comment = st.text_area("", placeholder="Give Finley commentary to remember, or ask it questions here...")
 
 comment = sanitize_text(comment)
+classify_submission(comment)
 
 if st.button("Submit"):
     if comment.strip():
