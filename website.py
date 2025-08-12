@@ -3,6 +3,7 @@ import sys
 import os
 
 # Add input_text folder to Python path
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'input_text')))
 
 from input_text.input_commentary import save_commentary
