@@ -7,7 +7,7 @@ input_text_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 
 sys.path.append(input_text_path)
 
 # Now import your function
-from input_commentary import save_commentary
+from commentary_upload import save_commentary
 
 # --- PAGE SETUP ---
 st.set_page_config(
