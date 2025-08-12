@@ -1,4 +1,7 @@
 import re
+submission_final_reply = []
+submission_commentary_reply = "I'll remember that for you."
+submission_question_reply = "Thank you for the question. [Reply]"
 
 def classify_submission(text: str) -> str:
     """
