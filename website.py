@@ -19,7 +19,9 @@ finley_path = os.path.abspath(os.path.dirname(__file__))
 if finley_path not in sys.path:
     sys.path.insert(0, finley_path)
 
+# Import other python codes
 from input_text.commentary_sanitize_text import sanitize_text
+from input_text.commentary_or_question import classify_submission
 
 # --- PAGE SETUP ---
 st.set_page_config(
