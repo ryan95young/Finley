@@ -156,15 +156,14 @@ st.markdown(
 # --- INPUT AREA ---
 comment = st.text_area("", placeholder="Give Finley commentary to remember, or ask it questions here...")
 
+comment = sanitize_text(comment)
+
 if st.button("Submit"):
     if comment.strip():
         if "submissions" not in st.session_state:
             st.session_state.submissions = []
         st.session_state.submissions.append({"comment": comment})
         st.success("I'll remember that for you")
-        
-        #save_commentary(comment)
-        comment = sanitize_text(comment)
         
     else:
         st.error("Please enter a comment before submitting.")
