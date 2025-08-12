@@ -19,7 +19,7 @@ finley_path = os.path.abspath(os.path.dirname(__file__))
 if finley_path not in sys.path:
     sys.path.insert(0, finley_path)
 
-from commentary_sanitize import sanitize_text
+from commentary_sanitize_text import sanitize_text
 
 # --- PAGE SETUP ---
 st.set_page_config(
