@@ -1,5 +1,7 @@
 import streamlit as st
-from commentary_upload import save_commentary
+from commentary_upload
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'input_text')))
 
 # --- PAGE SETUP ---
 st.set_page_config(
@@ -143,7 +145,7 @@ if st.button("Submit"):
         st.session_state.submissions.append({"comment": comment})
         st.success("I'll remember that for you")
         
-        save_commentary(comment)
+        commentary_upload.save_commentary(comment)
         
     else:
         st.error("Please enter a comment before submitting.")
