@@ -2,12 +2,10 @@ import streamlit as st
 import sys
 import os
 
-# Construct absolute path to input_text folder
-input_text_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'input_text'))
-sys.path.append(input_text_path)
+# Add input_text folder to Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'input_text')))
 
-# Now import your function
-from commentary_upload import save_commentary
+from input_commentary import save_commentary
 
 # --- PAGE SETUP ---
 st.set_page_config(
