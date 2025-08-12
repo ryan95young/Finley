@@ -2,14 +2,24 @@ import streamlit as st
 import sys
 import os
 
+# Remove duplicates and irrelevant entries from sys.path
+def clean_sys_path():
+    seen = set()
+    new_path = []
+    for p in sys.path:
+        if p not in seen and os.path.isdir(p):
+            seen.add(p)
+            new_path.append(p)
+    sys.path[:] = new_path
 
-print("Working dir:", os.getcwd())
-print("sys.path:", sys.path)
+clean_sys_path()
 
-# Add input_text folder to Python path
-sys.path.append(os.path.join(os.getcwd(), "input_text"))
+# Ensure your project folder is on the path (absolute path to finley)
+finley_path = os.path.abspath(os.path.dirname(__file__))
+if finley_path not in sys.path:
+    sys.path.insert(0, finley_path)
 
-from input_commentary import save_commentary
+print("Cleaned sys.path:", sys.path)
 
 # --- PAGE SETUP ---
 st.set_page_config(
