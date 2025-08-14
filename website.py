@@ -93,7 +93,7 @@ body {
     font-size: 1.1rem !important;
     font-family: 'Montserrat', sans-serif !important;
     resize: none !important;
-    min-height: 80px !important;
+    min-height: 40px !important;
     box-shadow: inset 0 2px 4px rgb(0 0 0 / 0.05) !important;
 }
 .stButton > button {
