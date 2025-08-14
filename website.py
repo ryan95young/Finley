@@ -92,7 +92,7 @@ body {
     padding: 12px !important;
     font-size: 1.1rem !important;
     font-family: 'Montserrat', sans-serif !important;
-    resize: vertical !important;
+    resize: none !important;
     min-height: 120px !important;
     box-shadow: inset 0 2px 4px rgb(0 0 0 / 0.05) !important;
 }
