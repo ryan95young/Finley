@@ -20,7 +20,7 @@ def save_commentary(comment):
     "id": new_id,
     "user_id": "ryan-young",
     "timestamp": datetime.utcnow().isoformat(),
-    "raw_json": text
+    "raw_json": comment
 }).execute()
     
     print ("testing is working 2")
