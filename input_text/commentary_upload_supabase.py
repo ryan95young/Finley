@@ -14,7 +14,7 @@ def save_commentary(comment):
     # Load existing data if the file exists
 
     # Get user input
-    text = input("Enter your commentary:\n").strip()
+    # text = input("Enter your commentary:\n").strip()
 
      # Sanitize the commentary text
     text = sanitize_text(text)
