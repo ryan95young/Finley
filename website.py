@@ -22,7 +22,6 @@ if finley_path not in sys.path:
 # Import other python codes
 from input_text.commentary_sanitize_text import sanitize_text
 from input_text.commentary_or_question import classify_submission
-from input_text.commentary_or_question import submission_final_reply
 
 # --- PAGE SETUP ---
 st.set_page_config(
@@ -93,8 +92,8 @@ body {
     padding: 12px !important;
     font-size: 1.1rem !important;
     font-family: 'Montserrat', sans-serif !important;
-    resize: vertical !important;
-    min-height: 120px !important;
+    resize: none !important;
+    min-height: 20px !important;
     box-shadow: inset 0 2px 4px rgb(0 0 0 / 0.05) !important;
 }
 .stButton > button {
@@ -130,6 +129,24 @@ header {visibility: hidden;}
     margin-right: auto;
     border-radius: 8px;
 }
+
+.upload-btn {
+    background-color: #1767a0;
+    color: white;
+    border: none;
+    padding: 0.7rem 2.2rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.upload-btn:hover {
+    background-color: #125a7e;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -172,6 +189,10 @@ if st.button("Submit"):
         
     else:
         st.error("Please enter a comment before submitting.")
+
+# --- FILE UPLOAD BELOW CHAT BOX ---
+uploaded_file = st.file_uploader("Upload files/photos for Finley to remember or analyze", 
+                                 type=["jpg", "jpeg", "png", "pdf", "docx"], key="file_upload")
 
 # --- RECENT SUBMISSIONS ---
 if "submissions" in st.session_state and st.session_state.submissions:
