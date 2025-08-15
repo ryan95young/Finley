@@ -54,5 +54,23 @@
     "text": "Testing supabase",
     "tags": [],
     "timestamp": "2025-08-14T20:51:28.909200"
+  },
+  {
+    "id": 9,
+    "text": "Testing v2",
+    "tags": [],
+    "timestamp": "2025-08-14T20:57:07.398475"
+  },
+  {
+    "id": 10,
+    "text": "Testing supabase load v3",
+    "tags": [],
+    "timestamp": "2025-08-14T21:09:56.041890"
+  },
+  {
+    "id": 11,
+    "text": "testing supabase v3",
+    "tags": [],
+    "timestamp": "2025-08-14T21:10:54.363406"
   }
 ]
