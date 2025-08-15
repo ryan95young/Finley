@@ -2,7 +2,13 @@ import json
 from datetime import datetime
 from commentary_sanitize_text import sanitize_text
 from commentary_detect_conflicts_and_duplicates import detect_conflicts_and_duplicates
+from supabase import create_client
 import os
+
+SUPABASE_URL = "https://wvhydcduidfgmswawkud.supabase.co"
+SUPABASE_KEY = "sb_publishable_xzumVoItFr43myzD6Qle_w_fyI8W6Q6"
+
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 def save_commentary(json_path="finley_memory.json"):
     # Load existing data if the file exists
@@ -41,6 +47,14 @@ def save_commentary(json_path="finley_memory.json"):
     # Save back to JSON file
     with open(json_path, "w") as f:
         json.dump(data, f, indent=2)
+
+    # Save to Supabase
+    response = supabase.table("Finley Testing").insert({
+    "uuid": len(data) + 1,
+    "user_id": "ryan-young",
+    "timestamp": datetime.utcnow().isoformat(),
+    "raw_json": text
+}).execute()
 
     print("✅ Commentary with tags saved.")
 
