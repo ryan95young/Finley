@@ -22,6 +22,7 @@ if finley_path not in sys.path:
 # Import other python codes
 from input_text.commentary_sanitize_text import sanitize_text
 from input_text.commentary_or_question import classify_submission
+from input_text.commentary_upload_supabase import save_commentary
 
 # --- PAGE SETUP ---
 st.set_page_config(
