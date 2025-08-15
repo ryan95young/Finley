@@ -22,6 +22,7 @@ if finley_path not in sys.path:
 # Import other python codes
 from input_text.commentary_sanitize_text import sanitize_text
 from input_text.commentary_or_question import classify_submission
+from input_text.commentary_upload_supabase import save_commentary
 
 # --- PAGE SETUP ---
 st.set_page_config(
@@ -179,7 +180,7 @@ comment = st.text_area("", placeholder="Give Finley commentary to remember, or a
 comment = sanitize_text(comment)
 submission_final_reply = classify_submission(comment)
 classify_submission(comment)
-save_commentary(comment)
+# save_commentary(comment)
 
 if st.button("Submit"):
     if comment.strip():
