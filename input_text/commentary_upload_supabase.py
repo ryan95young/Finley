@@ -12,8 +12,6 @@ supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 def save_commentary(comment):
 
-    print("testing is working 1")
-
     # Save to Supabase
     new_id = str(uuid.uuid4())
     response = supabase.table("Finley Testing").insert({
@@ -22,10 +20,3 @@ def save_commentary(comment):
     "timestamp": datetime.utcnow().isoformat(),
     "raw_json": comment
 }).execute()
-    
-    print ("testing is working 2")
-
-if __name__ == "__main__":
-    save_commentary()
-
-    print ("testing is working 3")
