@@ -181,6 +181,7 @@ comment = st.text_area("", placeholder="Give Finley commentary to remember, or a
 comment = sanitize_text(comment)
 submission_final_reply = classify_submission(comment)
 classify_submission(comment)
+save_commentary(comment)
 
 if st.button("Submit"):
     if comment.strip():
@@ -222,5 +223,3 @@ st.markdown("""
   <p>Finley reduces knowledge loss, prevents information silos, and bridges insights from field teams to executives.</p>
 </div>
 """, unsafe_allow_html=True)
-
-save_commentary(comment)
