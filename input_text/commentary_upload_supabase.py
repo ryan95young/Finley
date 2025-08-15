@@ -1,6 +1,6 @@
 import json
 from datetime import datetime
-from input_text.commentary_sanitize_text import sanitize_text
+from commentary_sanitize_text import sanitize_text
 from supabase import create_client
 import uuid
 import os
@@ -27,8 +27,6 @@ def save_commentary(comment):
     "timestamp": datetime.utcnow().isoformat(),
     "raw_json": text
 }).execute()
-
-    print("✅ Commentary with tags saved.")
 
 if __name__ == "__main__":
     save_commentary()
