@@ -2,6 +2,8 @@ import streamlit as st
 from supabase import create_client
 import sys
 import os
+import uuid
+import json
 
 # Remove duplicates and irrelevant entries from sys.path
 def clean_sys_path():
