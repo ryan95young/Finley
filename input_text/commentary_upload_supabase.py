@@ -11,13 +11,6 @@ SUPABASE_KEY = "sb_publishable_xzumVoItFr43myzD6Qle_w_fyI8W6Q6"
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 def save_commentary(comment):
-    # Load existing data if the file exists
-
-    # Get user input
-    # text = input("Enter your commentary:\n").strip()
-
-     # Sanitize the commentary text
-    text = sanitize_text(text)
 
     # Save to Supabase
     new_id = str(uuid.uuid4())
