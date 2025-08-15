@@ -1,5 +1,5 @@
 import streamlit as st
-from supabase import create_client
+# from supabase import create_client
 import sys
 import os
 
@@ -181,7 +181,7 @@ comment = st.text_area("", placeholder="Give Finley commentary to remember, or a
 comment = sanitize_text(comment)
 submission_final_reply = classify_submission(comment)
 classify_submission(comment)
-# save_commentary(comment)
+save_commentary(comment)
 
 if st.button("Submit"):
     if comment.strip():
