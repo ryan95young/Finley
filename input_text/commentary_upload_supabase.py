@@ -1,6 +1,6 @@
 import json
 from datetime import datetime
-from commentary_sanitize_text import sanitize_text
+from input_text.commentary_sanitize_text import sanitize_text
 from supabase import create_client
 import uuid
 import os
