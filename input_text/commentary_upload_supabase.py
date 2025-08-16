@@ -15,8 +15,9 @@ def save_commentary(comment):
     # Save to Supabase
     new_id = str(uuid.uuid4())
     response = supabase.table("Finley Testing").insert({
+    response = supabase.table("Finley_Testing").insert({
     "id": new_id,
     "user_id": "ryan-young",
     "timestamp": datetime.utcnow().isoformat(),
-    "raw_json": comment
+    "raw_json": comment_json
 }).execute()
