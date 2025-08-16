@@ -191,8 +191,8 @@ if st.button("Submit"):
             if submission_final_reply == "Commentary":
                 st.success("I'll remember that for you.")
                 save_commentary(comment)
-           else:
-                st.success("Thank you for the question. [Reply]")
+               else:
+                   st.success("Thank you for the question. [Reply]")
     
     else:
         st.error("Please enter a comment before submitting.")
