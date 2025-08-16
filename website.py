@@ -191,7 +191,12 @@ if st.button("Submit"):
         save_commentary(comment)
         
         st.success(submission_final_reply)
-        
+
+        if submission_final_reply = submission_commentary_reply
+            st.success("Commentary Path")
+        else:
+            st.success("Question Path")
+    
     else:
         st.error("Please enter a comment before submitting.")
 
