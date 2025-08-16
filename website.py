@@ -24,7 +24,7 @@ if finley_path not in sys.path:
 from input_text.commentary_sanitize_text import sanitize_text
 from input_text.commentary_or_question import classify_submission
 from input_text.commentary_upload_supabase import save_commentary
-from search.commentary_search import search_commentary
+from search.commentary_search_supabase import search_commentary
 
 # --- PAGE SETUP ---
 st.set_page_config(
