@@ -194,8 +194,8 @@ if st.button("Submit"):
             st.success("I'll remember that for you.")
             save_commentary(comment)
         else:
-            search_commentary(comment)
-            st.text_area(lines)
+            results_str = search_commentary(comment)
+            st.text_area("Search Results", value=results_str, height=300)
     
     else:
         st.error("Please enter a comment before submitting.")
