@@ -12,7 +12,7 @@ SUPABASE_KEY = "sb_publishable_xzumVoItFr43myzD6Qle_w_fyI8W6Q6"
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 #OpenAI client
-OpenAI_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+openAI_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def save_commentary(comment):
 
