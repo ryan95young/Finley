@@ -12,9 +12,13 @@ supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 def save_commentary(comment):
 
+    try:
+        utc_timestamp = datetime.now(timezone.utc).isoformat()
+    except Exception:
+        utc_timestamp = datetime.utcnow().isoformat() + "Z"
+
     # Save to Supabase
     new_id = str(uuid.uuid4())
-    utc_timestamp = datetime.now(timezone.utc).isoformat()
     comment_json = {"text": comment}
     response = supabase.table("Finley_Testing").insert({
     "id": new_id,
