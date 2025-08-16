@@ -1,5 +1,6 @@
 import streamlit as st
 from supabase import create_client
+from openai import OpenAI
 import sys
 import os
 
