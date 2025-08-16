@@ -15,9 +15,9 @@ def search_commentary(search_text):
         return []
 
     response = (
-        supabase.table("Finley Testing")
+        supabase.table("Finley_Testing")
         .select("*")
-        .ilike("raw_json", f"%{search_text}%")
+        .filter("raw_json->>text", "ilike", f"%{search_text}%")
         .execute()
     )
 
