@@ -195,7 +195,7 @@ if st.button("Submit"):
             save_commentary(comment)
         else:
             search_commentary(comment)
-            st.text_area(response.data)
+            st.text_area(lines)
     
     else:
         st.error("Please enter a comment before submitting.")
