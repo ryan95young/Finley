@@ -14,7 +14,7 @@ def search_commentary(search_text):
         return "No commentary stored yet."
 
     # Step 2: lowercase for simple keyword matching
-    question_words = set(question.lower().split())
+    question_words = set(comment.lower().split())
     matches = []
 
     for row in response.data:
