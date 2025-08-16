@@ -187,8 +187,12 @@ if st.button("Submit"):
         if "submissions" not in st.session_state:
             st.session_state.submissions = []
         st.session_state.submissions.append({"comment": comment})
-        st.success(submission_final_reply)
+
+            if submission_final_reply == "Commentary"
+            save_commentary(comment)
         
+        st.success(submission_final_reply)
+    
     else:
         st.error("Please enter a comment before submitting.")
 
@@ -222,5 +226,3 @@ st.markdown("""
   <p>Finley reduces knowledge loss, prevents information silos, and bridges insights from field teams to executives.</p>
 </div>
 """, unsafe_allow_html=True)
-
-save_commentary(comment)
