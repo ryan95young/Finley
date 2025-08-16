@@ -193,7 +193,8 @@ if st.button("Submit"):
             st.success("I'll remember that for you.")
             save_commentary(comment)
         else:
-            st.success("Thank you for the question. [Reply]")
+            search_commentary(comment)
+            st.success(response.data)
     
     else:
         st.error("Please enter a comment before submitting.")
