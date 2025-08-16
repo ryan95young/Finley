@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from input_text.commentary_sanitize_text import sanitize_text
 from supabase import create_client
 import uuid
@@ -14,10 +14,11 @@ def save_commentary(comment):
 
     # Save to Supabase
     new_id = str(uuid.uuid4())
+    utc_timestamp = datetime.now(timezone.utc).isoformat()
     comment_json = {"text": comment}
     response = supabase.table("Finley_Testing").insert({
     "id": new_id,
     "user_id": "ryan-young",
-    "timestamp": datetime.now(timezone.utc).isoformat(),
+    "timestamp": utc_timestamp,
     "raw_json": comment_json
 }).execute()
