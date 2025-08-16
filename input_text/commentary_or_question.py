@@ -1,9 +1,7 @@
 import re
 
-submission_commentary_reply = "I'll remember that for you."
-submission_question_reply = "Thank you for the question. [Reply]"
-submission_commentary_reply_path = "Commentary"
-submission_question_reply_path = "Question"
+submission_commentary_reply = "Commentary"
+submission_question_reply = "Question"
 
 def classify_submission(text: str) -> str:
     """
@@ -25,18 +23,14 @@ def classify_submission(text: str) -> str:
     # Rule 1: Contains a question mark anywhere → question
     if "?" in text_clean:
         return submission_question_reply
-        return submission_question_reply_path
     
     # Rule 2: Starts with question word → question
     if any(text_clean.startswith(qw + " ") for qw in question_words):
         return submission_question_reply
-        return submission_question_reply_path
     
     # Rule 3: Ends with question mark → question
     if re.match(r".+\?$", text.strip()):
         return submission_question_reply
-        return submission_question_reply_path
     
     # Default → commentary
     return submission_commentary_reply
-    return submission_commentary_reply_path
