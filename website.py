@@ -186,10 +186,10 @@ if st.button("Submit"):
     if comment.strip():
         if "submissions" not in st.session_state:
             st.session_state.submissions = []
-        st.session_state.submissions.append({"comment": comment})
+            st.session_state.submissions.append({"comment": comment})
 
-            if submission_final_reply == "Commentary"
-            save_commentary(comment)
+            if submission_final_reply_path == "Commentary":
+                save_commentary(comment)
         
         st.success(submission_final_reply)
     
