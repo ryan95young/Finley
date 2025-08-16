@@ -8,11 +8,11 @@ supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 def search_commentary(search_text):
     """
-    Search the 'Finley Testing' table for case-insensitive matches
-    in the raw_json field.
+    Search the 'Finley_Testing' table for case-insensitive matches
+    in the 'text' field inside raw_json, and return as a single string.
     """
     if not search_text.strip():
-        return []
+        return ""
 
     response = (
         supabase.table("Finley_Testing")
@@ -21,4 +21,15 @@ def search_commentary(search_text):
         .execute()
     )
 
-    return response.data if response.data else []
+    if not response.data:
+        return "No matching commentary found."
+
+    # Convert each JSON row into a single line of text
+    lines = []
+    for row in response.data:
+        json_data = row.get("raw_json", {})
+        text = json_data.get("text", "")
+        lines.append(text.replace("\n", " "))  # remove newlines inside each commentary
+
+    return "\n".join(lines)  # one line per row
+
