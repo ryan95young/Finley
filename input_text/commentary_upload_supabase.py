@@ -11,6 +11,8 @@ SUPABASE_URL = "https://wvhydcduidfgmswawkud.supabase.co"
 SUPABASE_KEY = "sb_publishable_xzumVoItFr43myzD6Qle_w_fyI8W6Q6"
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
+OPENAI_API_KEY = "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"
+
 #OpenAI client
 openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
