@@ -24,6 +24,7 @@ if finley_path not in sys.path:
 from input_text.commentary_sanitize_text import sanitize_text
 from input_text.commentary_or_question import classify_submission
 from input_text.commentary_upload_supabase import save_commentary
+from search.commentary_search import search_commentary
 
 # --- PAGE SETUP ---
 st.set_page_config(
@@ -186,12 +187,15 @@ if st.button("Submit"):
     if comment.strip():
         if "submissions" not in st.session_state:
             st.session_state.submissions = []
-            st.session_state.submissions.append({"comment": comment})
-
-            if submission_final_reply_path == "Commentary":
-                save_commentary(comment)
         
-        st.success(submission_final_reply)
+        st.session_state.submissions.append({"comment": comment})
+
+        if submission_final_reply == "Commentary":
+            st.success("I'll remember that for you.")
+            save_commentary(comment)
+        else:
+            search_commentary(comment)
+            st.success(response.data)
     
     else:
         st.error("Please enter a comment before submitting.")
