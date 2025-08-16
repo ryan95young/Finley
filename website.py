@@ -188,7 +188,7 @@ if st.button("Submit"):
             st.session_state.submissions = []
             st.session_state.submissions.append({"comment": comment})
 
-            if submission_final_reply == "Commentary"
+            if submission_final_reply == "Commentary":
                 save_commentary(comment)
         
         st.success(submission_final_reply)
