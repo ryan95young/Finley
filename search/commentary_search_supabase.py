@@ -7,29 +7,29 @@ SUPABASE_KEY = "sb_publishable_xzumVoItFr43myzD6Qle_w_fyI8W6Q6"
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 def search_commentary(search_text):
-    """
-    Search the 'Finley_Testing' table for case-insensitive matches
-    in the 'text' field inside raw_json, and return as a single string.
-    """
-    if not search_text.strip():
-        return ""
 
-    response = (
-        supabase.table("Finley_Testing")
-        .select("*")
-        .filter("raw_json->>text", "ilike", f"%{search_text}%")
-        .execute()
-    )
-
+    # Step 1: get all commentary from Supabase
+    response = supabase.table("Finley_Testing").select("*").execute()
     if not response.data:
+        return "No commentary stored yet."
+
+    # Step 2: lowercase for simple keyword matching
+    question_words = set(question.lower().split())
+    matches = []
+
+    for row in response.data:
+        text = row["raw_json"]["text"]
+        text_words = set(text.lower().split())
+        # simple overlap scoring
+        overlap = len(question_words & text_words)
+        if overlap > 0:
+            matches.append((overlap, text))
+    
+    if not matches:
         return "No matching commentary found."
 
-    # Convert each JSON row into a single line of text
-    lines = []
-    for row in response.data:
-        json_data = row.get("raw_json", {})
-        text = json_data.get("text", "")
-        lines.append(text.replace("\n", " "))  # remove newlines inside each commentary
-
-    return "\n".join(lines)  # one line per row
+    # Step 3: sort matches by highest overlap
+    matches.sort(reverse=True, key=lambda x: x[0])
+    # return top 5 matches
+    return "\n\n".join([m[1] for m in matches[:5]])
 
