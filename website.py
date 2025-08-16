@@ -188,10 +188,11 @@ if st.button("Submit"):
             st.session_state.submissions = []
             st.session_state.submissions.append({"comment": comment})
 
-            if submission_final_reply_path == "Commentary":
+            if submission_final_reply == "Commentary":
+                st.success("I'll remember that for you.")
                 save_commentary(comment)
-        
-        st.success(submission_final_reply)
+           else:
+                st.success("Thank you for the question. [Reply]")
     
     else:
         st.error("Please enter a comment before submitting.")
