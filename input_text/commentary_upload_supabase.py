@@ -14,8 +14,6 @@ supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 #OpenAI client
 openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-print(os.getenv("OPENAI_API_KEY"))
-
 def save_commentary(comment):
 
     embedding_response = openai_client.embeddings.create(
